@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Natally · Project Status</title>
+<link rel="icon" type="image/svg+xml" href="assets/natally-mark.svg">
+<style>
+  /* ── Natally design-system tokens (natally-design-system/tokens) ───────── */
+  @font-face { font-family: "Geist"; font-weight: 400; font-display: swap;
+    src: url("assets/fonts/Geist-Regular.woff2") format("woff2"); }
+  @font-face { font-family: "Geist"; font-weight: 500; font-display: swap;
+    src: url("assets/fonts/Geist-Medium.woff2") format("woff2"); }
+  @font-face { font-family: "Geist"; font-weight: 600; font-display: swap;
+    src: url("assets/fonts/Geist-SemiBold.woff2") format("woff2"); }
+
+  :root {
+    --violet-100: #ede9fe; --violet-200: #ddd6fe; --violet-300: #c4b5fd;
+    --violet-600: #7c3aed; --violet-700: #6d28d9;
+    --fuchsia-50: #fdf4ff; --fuchsia-600: #c026d3; --fuchsia-700: #a21caf;
+    --white: #ffffff; --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
+    --gray-400: #9ca3af; --gray-500: #6b7280; --gray-600: #4b5563;
+    --gray-700: #374151; --gray-900: #111827;
+    --gradient-brand: linear-gradient(to right, #7c3aed, #c026d3);
+    --bg-auth: linear-gradient(135deg, #f5f3ff 0%, #ffffff 50%, #fff1f2 100%);
+    --success-bg: #ecfdf5; --success-fg: #047857; --success-border: #a7f3d0;
+    --progress-bg: #ede9fe; --progress-fg: #6d28d9; --progress-border: #c4b5fd;
+    --queued-bg: #f3f4f6; --queued-fg: #6b7280; --queued-border: #e5e7eb;
+    --radius-sm: 8px; --radius-control: 12px; --radius-surface: 16px;
+    --radius-lg: 24px; --radius-full: 9999px;
+    --shadow-card: 0 1px 2px rgb(17 24 39 / 0.05);
+    --shadow-card-hover: 0 4px 12px rgb(17 24 39 / 0.08);
+    --font-sans: "Geist", ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background: var(--gray-50); color: var(--gray-700);
+    font-size: 16px; line-height: 1.55;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Header ────────────────────────────────────────────────────────────── */
+  header { background: var(--white); border-bottom: 1px solid var(--gray-200); }
+  .header-inner { display: flex; align-items: center; gap: 12px; padding: 16px 0; }
+  .mark { width: 36px; height: 36px; border-radius: 10px; display: block; }
+  .wordmark { font-size: 18px; font-weight: 600; color: var(--gray-900); letter-spacing: -0.01em; }
+  .wordmark span { color: var(--violet-600); }
+  .header-right { margin-left: auto; font-size: 13px; color: var(--gray-500); text-align: right; }
+
+  /* ── Hero ──────────────────────────────────────────────────────────────── */
+  .hero { background: var(--bg-auth); border-bottom: 1px solid var(--gray-200); }
+  .hero-inner { padding: 48px 0 40px; }
+  .eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--violet-600); margin-bottom: 10px;
+  }
+  h1 { font-size: 30px; line-height: 1.15; font-weight: 600; letter-spacing: -0.02em; color: var(--gray-900); }
+  .hero-sub { margin-top: 8px; font-size: 16px; color: var(--gray-500); max-width: 560px; }
+
+  .hero-progress { margin-top: 28px; max-width: 640px; }
+  .hero-number { display: flex; align-items: baseline; gap: 10px; }
+  .hero-pct {
+    font-size: 56px; font-weight: 600; letter-spacing: -0.03em; line-height: 1;
+    background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-caption { font-size: 15px; color: var(--gray-600); }
+  .hero-bar { margin-top: 14px; }
+
+  .bar { height: 10px; background: var(--gray-200); border-radius: var(--radius-full); overflow: hidden; }
+  .bar-fill { height: 100%; background: var(--gradient-brand); border-radius: var(--radius-full); min-width: 10px; }
+  .bar.thin { height: 8px; }
+
+  .stat-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  .stat {
+    background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-surface);
+    padding: 14px 20px; box-shadow: var(--shadow-card); min-width: 150px;
+  }
+  .stat b { display: block; font-size: 24px; font-weight: 600; color: var(--gray-900); letter-spacing: -0.01em; }
+  .stat span { font-size: 13px; color: var(--gray-500); }
+
+  /* ── Roadmap strip ─────────────────────────────────────────────────────── */
+  .roadmap-section { padding: 36px 0 8px; }
+  h2 { font-size: 20px; font-weight: 600; color: var(--gray-900); letter-spacing: -0.01em; }
+  .section-sub { font-size: 14px; color: var(--gray-500); margin-top: 2px; }
+  .roadmap { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 18px; }
+  @media (max-width: 900px) { .roadmap { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 560px) { .roadmap { grid-template-columns: repeat(2, 1fr); } }
+  .phase {
+    background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-control);
+    padding: 14px; box-shadow: var(--shadow-card);
+  }
+  .phase-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .phase-title { font-size: 14px; font-weight: 600; color: var(--gray-900); line-height: 1.25; }
+  .phase-blurb { font-size: 12px; color: var(--gray-500); line-height: 1.4; }
+  .phase .bar { margin-top: 10px; height: 6px; }
+  .phase-meta { margin-top: 6px; font-size: 11px; color: var(--gray-400); font-variant-numeric: tabular-nums; }
+
+  .dot { width: 22px; height: 22px; border-radius: var(--radius-full); flex: none;
+    display: flex; align-items: center; justify-content: center; }
+  .dot svg { width: 12px; height: 12px; }
+  .dot.done { background: var(--gradient-brand); color: var(--white); }
+  .dot.active { background: var(--violet-100); color: var(--violet-700); border: 1px solid var(--violet-300); }
+  .dot.queued { background: var(--gray-100); color: var(--gray-400); border: 1px dashed var(--gray-300, #d1d5db); }
+
+  /* ── Feature sections ──────────────────────────────────────────────────── */
+  .features-section { padding: 28px 0 8px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 18px; }
+  .card {
+    background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-surface);
+    padding: 20px; box-shadow: var(--shadow-card); display: flex; flex-direction: column; gap: 10px;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-1px); }
+  .card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+  .card h3 { font-size: 16px; font-weight: 600; color: var(--gray-900); line-height: 1.3; }
+  .card-blurb { font-size: 14px; color: var(--gray-500); line-height: 1.5; flex: 1; }
+  .card-note { font-size: 13px; color: var(--violet-700); background: #f5f3ff;
+    border-radius: var(--radius-sm); padding: 6px 10px; }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 5px; flex: none;
+    font-size: 12px; font-weight: 600; border-radius: var(--radius-full);
+    padding: 3px 10px 3px 7px; border: 1px solid; white-space: nowrap;
+  }
+  .chip svg { width: 12px; height: 12px; }
+  .chip.done { background: var(--success-bg); color: var(--success-fg); border-color: var(--success-border); }
+  .chip.active { background: var(--progress-bg); color: var(--progress-fg); border-color: var(--progress-border); }
+  .chip.queued { background: var(--queued-bg); color: var(--queued-fg); border-color: var(--queued-border); }
+
+  .progress-row { display: flex; align-items: center; gap: 10px; }
+  .progress-row .bar { flex: 1; }
+  .pct { font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--gray-700);
+    min-width: 38px; text-align: right; font-variant-numeric: tabular-nums; }
+
+  .card-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    border-top: 1px solid var(--gray-100); padding-top: 12px; margin-top: 2px; }
+  .count { font-size: 12px; color: var(--gray-400); font-variant-numeric: tabular-nums; }
+
+  .owners { display: flex; align-items: center; gap: 6px; }
+  .avatar {
+    width: 24px; height: 24px; border-radius: var(--radius-full); flex: none;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600; border: 1px solid;
+  }
+  .avatar.mike { background: var(--violet-100); color: var(--violet-700); border-color: var(--violet-200); }
+  .avatar.will { background: var(--fuchsia-50); color: var(--fuchsia-700); border-color: #f5d0fe; }
+  .owner-names { font-size: 12px; color: var(--gray-600); font-weight: 500; }
+
+  /* ── Footer ────────────────────────────────────────────────────────────── */
+  footer { border-top: 1px solid var(--gray-200); margin-top: 44px; background: var(--white); }
+  .footer-inner { padding: 24px 0 32px; display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: var(--gray-500); flex-wrap: wrap; }
+  .footer-inner img { width: 20px; height: 20px; border-radius: 6px; }
+
+  .loading, .error-msg { padding: 64px 0; text-align: center; color: var(--gray-500); font-size: 15px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <img class="mark" src="assets/natally-mark.svg" alt="">
+    <div class="wordmark">natally <span>·</span> project status</div>
+    <div class="header-right" id="updated"></div>
+  </div>
+</header>
+
+<main id="main">
+  <noscript><div class="wrap loading">This page needs JavaScript to load the latest status.</div></noscript>
+  <div class="loading" id="loading">Loading the latest status…</div>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <img src="assets/natally-mark.svg" alt="">
+    <span>This page updates automatically from the Natally project tracker.</span>
+    <span id="stamp"></span>
+  </div>
+</footer>
+
+<script>
+const ICONS = {
+  check: '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  half: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 2a6 6 0 0 1 0 12Z" fill="currentColor"/></svg>',
+  clock: '<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="2"/><path d="M8 5v3.2l2.2 1.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>'
+};
+const STATUS = {
+  complete:    { cls: "done",   label: "Done",        icon: ICONS.check },
+  in_progress: { cls: "active", label: "In progress", icon: ICONS.half  },
+  not_started: { cls: "queued", label: "Up next",     icon: ICONS.clock }
+};
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+const fmtDate = (iso) => new Date(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+
+function chip(status) {
+  const s = STATUS[status];
+  return `<span class="chip ${s.cls}">${s.icon}${s.label}</span>`;
+}
+function ownersHtml(owners) {
+  if (!owners || !owners.length) return "";
+  const avatars = owners.map(o =>
+    `<span class="avatar ${esc(o.toLowerCase())}" aria-hidden="true">${esc(o[0])}</span>`).join("");
+  return `<span class="owners">${avatars}<span class="owner-names">${esc(owners.join(" · "))}</span></span>`;
+}
+function bar(pct, thin) {
+  return `<div class="bar${thin ? " thin" : ""}" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100">
+    <div class="bar-fill" style="width:${Math.max(pct, 3)}%"></div></div>`;
+}
+
+function featureCard(f) {
+  const done = f.status === "complete";
+  const progress = f.status === "in_progress"
+    ? `<div class="progress-row">${bar(f.pct, true)}<span class="pct">${f.pct}%</span></div>` : "";
+  const countText = done
+    ? `${f.closed} work item${f.closed === 1 ? "" : "s"} completed`
+    : f.status === "in_progress"
+      ? `${f.closed} of ${f.total} work items done`
+      : `${f.open} work item${f.open === 1 ? "" : "s"} planned`;
+  return `<article class="card">
+    <div class="card-top"><h3>${esc(f.title)}</h3>${chip(f.status)}</div>
+    <p class="card-blurb">${esc(f.blurb)}</p>
+    ${f.note ? `<div class="card-note">${esc(f.note)}</div>` : ""}
+    ${progress}
+    <div class="card-foot"><span class="count">${countText}</span>${ownersHtml(f.owners)}</div>
+  </article>`;
+}
+
+function phaseCard(p) {
+  const s = STATUS[p.status];
+  const dotCls = { complete: "done", in_progress: "active", not_started: "queued" }[p.status];
+  const body = p.status === "in_progress"
+    ? `${bar(p.pct)}<div class="phase-meta">${p.pct}% · ${p.closed} of ${p.total} done</div>`
+    : p.status === "complete"
+      ? `<div class="phase-meta">Complete · ${p.closed} item${p.closed === 1 ? "" : "s"}</div>`
+      : `<div class="phase-meta">${p.open ? p.open + " item" + (p.open === 1 ? "" : "s") + " queued" : "Coming up"}</div>`;
+  return `<div class="phase">
+    <div class="phase-top"><span class="dot ${dotCls}" title="${s.label}">${s.icon}</span>
+      <span class="phase-title">${esc(p.title)}</span></div>
+    <div class="phase-blurb">${esc(p.blurb)}</div>
+    ${body}
+  </div>`;
+}
+
+function section(title, sub, cards) {
+  if (!cards.length) return "";
+  return `<section class="features-section wrap">
+    <h2>${esc(title)}</h2><div class="section-sub">${esc(sub)}</div>
+    <div class="cards">${cards.join("")}</div>
+  </section>`;
+}
+
+async function render() {
+  let data;
+  try {
+    const res = await fetch("data.json", { cache: "no-store" });
+    data = await res.json();
+  } catch (e) {
+    document.getElementById("loading").outerHTML =
+      `<div class="error-msg">Couldn’t load the latest status — please refresh.</div>`;
+    return;
+  }
+  const inProgress = data.features.filter(f => f.status === "in_progress").sort((a, b) => a.pct - b.pct);
+  const upNext = data.features.filter(f => f.status === "not_started");
+  const done = data.features.filter(f => f.status === "complete");
+  const nowBuilding = inProgress.length;
+
+  document.getElementById("updated").innerHTML =
+    `Updated ${fmtDate(data.generatedAt)}`;
+  document.getElementById("stamp").textContent =
+    `Last updated ${fmtDate(data.generatedAt)}.`;
+
+  document.getElementById("main").innerHTML = `
+  <div class="hero">
+    <div class="wrap hero-inner">
+      <div class="eyebrow">Natally RCT · Road to Pilot</div>
+      <h1>Building toward the pilot study</h1>
+      <p class="hero-sub">A live, at-a-glance view of what’s done, what’s being built right now, and what’s coming next.</p>
+      <div class="hero-progress">
+        <div class="hero-number"><span class="hero-pct">${data.hero.pct}%</span>
+          <span class="hero-caption">of the road-to-pilot build complete<br>
+            <span style="font-size:13px;color:var(--gray-400)">weighted by task size, so big tasks count for more</span></span></div>
+        <div class="hero-bar">${bar(data.hero.pct)}</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b>${data.totals.closed}</b><span>work items completed to date</span></div>
+        <div class="stat"><b>${data.hero.closed} of ${data.hero.total}</b><span>roadmap items done</span></div>
+        <div class="stat"><b>${nowBuilding}</b><span>feature areas in progress</span></div>
+      </div>
+    </div>
+  </div>
+  <section class="roadmap-section wrap">
+    <h2>The road to pilot</h2>
+    <div class="section-sub">Six phases between today and participants enrolling.</div>
+    <div class="roadmap">${data.roadmap.map(phaseCard).join("")}</div>
+  </section>
+  ${section("In progress now", "Actively being built — sorted by how much is left to do.", inProgress.map(featureCard))}
+  ${section("Up next", "Queued and ready to start.", upNext.map(featureCard))}
+  ${section("Done", "Built, reviewed, and live in the app.", done.map(featureCard))}`;
+}
+render();
+</script>
+</body>
+</html>

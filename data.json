@@ -1,0 +1,263 @@
+{
+  "generatedAt": "2026-08-13T18:09:05.738Z",
+  "repo": "egghp/natallyrct",
+  "hero": {
+    "open": 30,
+    "closed": 21,
+    "total": 51,
+    "pct": 26,
+    "recentClosed": 1
+  },
+  "roadmap": [
+    {
+      "title": "Close the Gates",
+      "blurb": "Sign-offs, credentials & unblockers",
+      "open": 6,
+      "closed": 0,
+      "total": 6,
+      "pct": 0,
+      "recentClosed": 0,
+      "status": "not_started"
+    },
+    {
+      "title": "Health Tracking",
+      "blurb": "Check-ins, symptoms & reminders",
+      "open": 13,
+      "closed": 1,
+      "total": 14,
+      "pct": 3,
+      "recentClosed": 1,
+      "status": "in_progress"
+    },
+    {
+      "title": "Care Team Dashboard",
+      "blurb": "Coordinator view of participants",
+      "open": 2,
+      "closed": 0,
+      "total": 2,
+      "pct": 0,
+      "recentClosed": 0,
+      "status": "not_started"
+    },
+    {
+      "title": "Design Foundations",
+      "blurb": "One visual language for the app",
+      "open": 0,
+      "closed": 20,
+      "total": 20,
+      "pct": 100,
+      "recentClosed": 0,
+      "status": "complete"
+    },
+    {
+      "title": "Hardening",
+      "blurb": "Quality, integration & polish",
+      "open": 9,
+      "closed": 0,
+      "total": 9,
+      "pct": 0,
+      "recentClosed": 0,
+      "status": "not_started"
+    },
+    {
+      "title": "Pilot Readiness",
+      "blurb": "Final checks before launch",
+      "open": 0,
+      "closed": 0,
+      "total": 0,
+      "pct": 0,
+      "recentClosed": 0,
+      "status": "not_started"
+    }
+  ],
+  "features": [
+    {
+      "id": "tracking",
+      "title": "Health Tracking & Check-ins",
+      "blurb": "Daily and weekly health check-ins, symptom tracking, and appointment reminders.",
+      "open": 14,
+      "closed": 4,
+      "total": 18,
+      "pct": 18,
+      "recentClosed": 1,
+      "status": "in_progress",
+      "owners": [
+        "Will",
+        "Mike"
+      ]
+    },
+    {
+      "id": "assessment",
+      "title": "Risk Assessment",
+      "blurb": "The health & pregnancy questionnaire and the scoring engine behind it.",
+      "open": 1,
+      "closed": 38,
+      "total": 39,
+      "pct": 98,
+      "recentClosed": 0,
+      "status": "in_progress",
+      "owners": [
+        "Mike"
+      ]
+    },
+    {
+      "id": "results",
+      "title": "My Results",
+      "blurb": "Personalized results each participant reviews and discusses with their provider.",
+      "open": 2,
+      "closed": 9,
+      "total": 11,
+      "pct": 88,
+      "recentClosed": 0,
+      "status": "in_progress",
+      "owners": [
+        "Mike"
+      ]
+    },
+    {
+      "id": "plan",
+      "title": "My Plan",
+      "blurb": "The step-by-step personal plan built from each participant's results.",
+      "open": 0,
+      "closed": 3,
+      "total": 3,
+      "pct": 100,
+      "recentClosed": 0,
+      "status": "complete",
+      "owners": [
+        "Mike"
+      ]
+    },
+    {
+      "id": "chat",
+      "title": "Natally Chat",
+      "blurb": "The in-app companion participants can talk to any time.",
+      "open": 2,
+      "closed": 6,
+      "total": 8,
+      "pct": 60,
+      "recentClosed": 0,
+      "status": "in_progress",
+      "owners": [
+        "Will"
+      ]
+    },
+    {
+      "id": "onboarding",
+      "title": "Getting Started",
+      "blurb": "Enrollment, sign-in, and first-time setup for new participants.",
+      "open": 1,
+      "closed": 38,
+      "total": 39,
+      "pct": 96,
+      "recentClosed": 0,
+      "status": "in_progress",
+      "owners": [
+        "Mike"
+      ]
+    },
+    {
+      "id": "crc",
+      "title": "Care Team Dashboard",
+      "blurb": "Where study coordinators see participant progress and follow-ups.",
+      "note": "Spec in progress — build follows Health Tracking.",
+      "open": 1,
+      "closed": 0,
+      "total": 1,
+      "pct": 0,
+      "recentClosed": 0,
+      "status": "not_started",
+      "owners": [
+        "Mike",
+        "Will"
+      ]
+    },
+    {
+      "id": "library",
+      "title": "Learning Library",
+      "blurb": "Educational articles and resources for participants.",
+      "open": 1,
+      "closed": 0,
+      "total": 1,
+      "pct": 0,
+      "recentClosed": 0,
+      "status": "not_started",
+      "owners": []
+    },
+    {
+      "id": "design",
+      "title": "Design & Navigation",
+      "blurb": "The look, feel, and flow of the app — consistent and easy to move through.",
+      "open": 0,
+      "closed": 42,
+      "total": 42,
+      "pct": 100,
+      "recentClosed": 0,
+      "status": "complete",
+      "owners": [
+        "Mike"
+      ]
+    },
+    {
+      "id": "compliance",
+      "title": "Study Operations & Compliance",
+      "blurb": "NYU security review, approvals, and the operational plumbing of the study.",
+      "open": 6,
+      "closed": 2,
+      "total": 8,
+      "pct": 31,
+      "recentClosed": 0,
+      "status": "in_progress",
+      "owners": [
+        "Mike"
+      ]
+    },
+    {
+      "id": "launch",
+      "title": "Pilot Launch Readiness",
+      "blurb": "The final sign-offs and gates before participants enroll.",
+      "open": 6,
+      "closed": 0,
+      "total": 6,
+      "pct": 0,
+      "recentClosed": 0,
+      "status": "not_started",
+      "owners": [
+        "Mike"
+      ]
+    },
+    {
+      "id": "quality",
+      "title": "Quality & Polish",
+      "blurb": "Bug fixes, refinements, and making everything work smoothly together.",
+      "open": 2,
+      "closed": 42,
+      "total": 44,
+      "pct": 96,
+      "recentClosed": 0,
+      "status": "in_progress",
+      "owners": [
+        "Mike"
+      ]
+    },
+    {
+      "id": "platform",
+      "title": "Behind the Scenes",
+      "blurb": "Databases, infrastructure, specs, and the invisible work that keeps it all running.",
+      "open": 0,
+      "closed": 109,
+      "total": 109,
+      "pct": 100,
+      "recentClosed": 0,
+      "status": "complete",
+      "owners": [
+        "Mike"
+      ]
+    }
+  ],
+  "totals": {
+    "open": 36,
+    "closed": 294,
+    "recentClosed": 1
+  }
+}

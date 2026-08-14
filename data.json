@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-14T17:57:41.388Z",
+  "generatedAt": "2026-08-14T17:59:26.185Z",
   "repo": "egghp/natallyrct",
   "hero": {
-    "open": 30,
+    "open": 32,
     "closed": 21,
-    "total": 51,
-    "pct": 27,
+    "total": 53,
+    "pct": 26,
     "recentClosed": 1
   },
   "roadmap": [
@@ -28,6 +28,16 @@
       "pct": 3,
       "recentClosed": 1,
       "status": "in_progress"
+    },
+    {
+      "title": "Care Team Dashboard",
+      "blurb": "Coordinator view of participants",
+      "open": 2,
+      "closed": 0,
+      "total": 2,
+      "pct": 0,
+      "recentClosed": 0,
+      "status": "not_started"
     },
     {
       "title": "Design Foundations",
@@ -147,6 +157,22 @@
       ]
     },
     {
+      "id": "crc",
+      "title": "Care Team Dashboard",
+      "blurb": "Where study coordinators see participant progress and follow-ups.",
+      "note": "Spec in progress — build follows Health Tracking.",
+      "open": 1,
+      "closed": 0,
+      "total": 1,
+      "pct": 0,
+      "recentClosed": 0,
+      "status": "not_started",
+      "owners": [
+        "Mike",
+        "Will"
+      ]
+    },
+    {
       "id": "library",
       "title": "Learning Library",
       "blurb": "Educational articles and resources for participants.",
@@ -218,12 +244,12 @@
       "id": "platform",
       "title": "Behind the Scenes",
       "blurb": "Databases, infrastructure, specs, and the invisible work that keeps it all running.",
-      "open": 1,
+      "open": 0,
       "closed": 109,
-      "total": 110,
-      "pct": 99,
+      "total": 109,
+      "pct": 100,
       "recentClosed": 0,
-      "status": "in_progress",
+      "status": "complete",
       "owners": [
         "Mike"
       ]

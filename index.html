@@ -352,7 +352,7 @@ async function render() {
   </div>
   <section class="roadmap-section wrap">
     <h2>The road to pilot</h2>
-    <div class="section-sub">Six phases between today and participants enrolling.</div>
+    <div class="section-sub">${data.roadmap.length} phases between today and participants enrolling.</div>
     <div class="roadmap">${data.roadmap.map(phaseCard).join("")}</div>
   </section>
   ${section("In progress now", "Actively being built — sorted by how much is left to do.", inProgress.map(featureCard))}

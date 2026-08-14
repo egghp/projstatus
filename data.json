@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T14:46:47.992Z",
+  "generatedAt": "2026-08-14T15:19:49.729Z",
   "repo": "egghp/natallyrct",
   "hero": {
     "open": 29,
@@ -80,10 +80,10 @@
       "id": "assessment",
       "title": "Risk Assessment",
       "blurb": "The health & pregnancy questionnaire and the scoring engine behind it.",
-      "open": 1,
+      "open": 2,
       "closed": 38,
-      "total": 39,
-      "pct": 98,
+      "total": 40,
+      "pct": 96,
       "recentClosed": 0,
       "status": "in_progress",
       "owners": [
@@ -230,7 +230,7 @@
     }
   ],
   "totals": {
-    "open": 35,
+    "open": 36,
     "closed": 293,
     "recentClosed": 1
   }

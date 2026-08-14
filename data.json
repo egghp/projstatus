@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-14T16:12:08.027Z",
+  "generatedAt": "2026-08-14T17:57:41.388Z",
   "repo": "egghp/natallyrct",
   "hero": {
-    "open": 31,
+    "open": 30,
     "closed": 21,
-    "total": 52,
-    "pct": 26,
+    "total": 51,
+    "pct": 27,
     "recentClosed": 1
   },
   "roadmap": [
@@ -42,9 +42,9 @@
     {
       "title": "Hardening",
       "blurb": "Quality, integration & polish",
-      "open": 10,
+      "open": 9,
       "closed": 0,
-      "total": 10,
+      "total": 9,
       "pct": 0,
       "recentClosed": 0,
       "status": "not_started"
@@ -218,19 +218,19 @@
       "id": "platform",
       "title": "Behind the Scenes",
       "blurb": "Databases, infrastructure, specs, and the invisible work that keeps it all running.",
-      "open": 0,
+      "open": 1,
       "closed": 109,
-      "total": 109,
-      "pct": 100,
+      "total": 110,
+      "pct": 99,
       "recentClosed": 0,
-      "status": "complete",
+      "status": "in_progress",
       "owners": [
         "Mike"
       ]
     }
   ],
   "totals": {
-    "open": 39,
+    "open": 40,
     "closed": 293,
     "recentClosed": 1
   }

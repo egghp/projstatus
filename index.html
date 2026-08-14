@@ -49,9 +49,9 @@
   /* ── Header ────────────────────────────────────────────────────────────── */
   header { background: var(--white); border-bottom: 1px solid var(--gray-200); }
   .header-inner { display: flex; align-items: center; gap: 12px; padding: 16px 0; }
-  .mark { width: 36px; height: 36px; border-radius: 10px; display: block; }
-  .wordmark { font-size: 18px; font-weight: 600; color: var(--gray-900); letter-spacing: -0.01em; }
-  .wordmark span { color: var(--violet-600); }
+  .wordmark-img { height: 30px; width: auto; display: block; }
+  .wordmark-sub { font-size: 15px; font-weight: 500; color: var(--gray-500); letter-spacing: -0.01em;
+    padding-left: 12px; border-left: 1px solid var(--gray-200); }
   .header-right { margin-left: auto; font-size: 13px; color: var(--gray-500); text-align: right; }
 
   /* ── Hero ──────────────────────────────────────────────────────────────── */
@@ -157,7 +157,27 @@
   footer { border-top: 1px solid var(--gray-200); margin-top: 44px; background: var(--white); }
   .footer-inner { padding: 24px 0 32px; display: flex; align-items: center; gap: 10px;
     font-size: 13px; color: var(--gray-500); flex-wrap: wrap; }
-  .footer-inner img { width: 20px; height: 20px; border-radius: 6px; }
+  .footer-inner img { height: 18px; width: auto; }
+
+  /* ── All-areas chart ───────────────────────────────────────────────────── */
+  .chart-section { padding: 28px 0 8px; }
+  .chart {
+    background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-surface);
+    padding: 24px; box-shadow: var(--shadow-card); margin-top: 18px;
+  }
+  .chart-row { display: grid; grid-template-columns: 220px 1fr 44px; gap: 14px;
+    align-items: center; padding: 7px 0; }
+  @media (max-width: 640px) { .chart-row { grid-template-columns: 128px 1fr 40px; } }
+  .chart-label { font-size: 14px; font-weight: 500; color: var(--gray-700); text-align: right;
+    line-height: 1.25; overflow-wrap: break-word; }
+  .chart-row.queued-row .chart-label, .chart-row.queued-row .pct { color: var(--gray-400); }
+  .chart-row .bar { height: 12px; }
+  .chart-row .bar-fill { min-width: 0; }
+  .chart-divider { border: 0; border-top: 1px dashed var(--gray-200); margin: 10px 0; }
+  .chart-legend { display: flex; gap: 18px; margin-top: 16px; padding-top: 14px;
+    border-top: 1px solid var(--gray-100); font-size: 12px; color: var(--gray-500); flex-wrap: wrap; }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 12px; height: 12px; border-radius: 4px; display: inline-block; }
 
   .loading, .error-msg { padding: 64px 0; text-align: center; color: var(--gray-500); font-size: 15px; }
 
@@ -170,8 +190,8 @@
 
 <header>
   <div class="wrap header-inner">
-    <img class="mark" src="assets/natally-mark.svg" alt="">
-    <div class="wordmark">natally <span>·</span> project status</div>
+    <img class="wordmark-img" src="assets/natally-wordmark.png" alt="Natally">
+    <div class="wordmark-sub">project status</div>
     <div class="header-right" id="updated"></div>
   </div>
 </header>
@@ -183,7 +203,7 @@
 
 <footer>
   <div class="wrap footer-inner">
-    <img src="assets/natally-mark.svg" alt="">
+    <img src="assets/natally-wordmark.png" alt="Natally">
     <span>This page updates automatically from the Natally project tracker.</span>
     <span id="stamp"></span>
   </div>
@@ -252,6 +272,37 @@ function phaseCard(p) {
   </div>`;
 }
 
+function chartRow(f, queued) {
+  const tip = `${f.closed} of ${f.total} work item${f.total === 1 ? "" : "s"} done`;
+  return `<div class="chart-row${queued ? " queued-row" : ""}" title="${esc(tip)}">
+    <span class="chart-label">${esc(f.title)}</span>
+    <div class="bar" role="progressbar" aria-valuenow="${f.pct}" aria-valuemin="0" aria-valuemax="100"
+      aria-label="${esc(f.title)}: ${f.pct}% complete">
+      <div class="bar-fill" style="width:${f.pct}%"></div>
+    </div>
+    <span class="pct">${f.pct}%</span>
+  </div>`;
+}
+
+function chartSection(features) {
+  const started = features
+    .filter(f => f.status !== "not_started")
+    .sort((a, b) => a.pct - b.pct || a.title.localeCompare(b.title));
+  const queued = features.filter(f => f.status === "not_started");
+  return `<section class="chart-section wrap">
+    <h2>Every area at a glance</h2>
+    <div class="section-sub">Percent complete for all ${features.length} feature areas — least finished at the top, not-yet-started at the bottom.</div>
+    <div class="chart">
+      ${started.map(f => chartRow(f, false)).join("")}
+      ${queued.length ? `<hr class="chart-divider">${queued.map(f => chartRow(f, true)).join("")}` : ""}
+      <div class="chart-legend">
+        <span><span class="swatch" style="background:var(--gradient-brand)"></span>Progress, weighted by task size</span>
+        <span><span class="swatch" style="background:var(--gray-200)"></span>Remaining</span>
+      </div>
+    </div>
+  </section>`;
+}
+
 function section(title, sub, cards) {
   if (!cards.length) return "";
   return `<section class="features-section wrap">
@@ -306,7 +357,8 @@ async function render() {
   </section>
   ${section("In progress now", "Actively being built — sorted by how much is left to do.", inProgress.map(featureCard))}
   ${section("Up next", "Queued and ready to start.", upNext.map(featureCard))}
-  ${section("Done", "Built, reviewed, and live in the app.", done.map(featureCard))}`;
+  ${section("Done", "Built, reviewed, and live in the app.", done.map(featureCard))}
+  ${chartSection(data.features)}`;
 }
 render();
 </script>

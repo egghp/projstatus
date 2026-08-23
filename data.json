@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-08-23T16:47:26.329Z",
+  "generatedAt": "2026-08-23T17:26:54.515Z",
   "repo": "egghp/natallyrct",
   "hero": {
-    "open": 37,
+    "open": 42,
     "closed": 21,
-    "total": 58,
-    "pct": 24,
+    "total": 63,
+    "pct": 22,
     "recentClosed": 1
   },
   "roadmap": [
     {
       "title": "Close the Gates",
       "blurb": "Sign-offs, credentials & unblockers",
-      "open": 8,
+      "open": 13,
       "closed": 0,
-      "total": 8,
+      "total": 13,
       "pct": 0,
       "recentClosed": 0,
       "status": "not_started"

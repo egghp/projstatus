@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T16:33:29.663Z",
+  "generatedAt": "2026-08-23T16:34:47.083Z",
   "repo": "egghp/natallyrct",
   "hero": {
     "open": 37,
@@ -132,10 +132,10 @@
       "id": "chat",
       "title": "Natally Chat",
       "blurb": "The in-app companion participants can talk to any time.",
-      "open": 2,
+      "open": 4,
       "closed": 6,
-      "total": 8,
-      "pct": 60,
+      "total": 10,
+      "pct": 47,
       "recentClosed": 0,
       "status": "in_progress",
       "owners": [
@@ -146,10 +146,10 @@
       "id": "onboarding",
       "title": "Getting Started",
       "blurb": "Enrollment, sign-in, and first-time setup for new participants.",
-      "open": 1,
+      "open": 2,
       "closed": 38,
-      "total": 39,
-      "pct": 96,
+      "total": 40,
+      "pct": 94,
       "recentClosed": 0,
       "status": "in_progress",
       "owners": [
@@ -202,10 +202,10 @@
       "id": "compliance",
       "title": "Study Operations & Compliance",
       "blurb": "NYU security review, approvals, and the operational plumbing of the study.",
-      "open": 7,
+      "open": 18,
       "closed": 2,
-      "total": 9,
-      "pct": 24,
+      "total": 20,
+      "pct": 10,
       "recentClosed": 0,
       "status": "in_progress",
       "owners": [
@@ -230,10 +230,10 @@
       "id": "quality",
       "title": "Quality & Polish",
       "blurb": "Bug fixes, refinements, and making everything work smoothly together.",
-      "open": 2,
+      "open": 6,
       "closed": 42,
-      "total": 44,
-      "pct": 96,
+      "total": 48,
+      "pct": 86,
       "recentClosed": 0,
       "status": "in_progress",
       "owners": [
@@ -244,19 +244,19 @@
       "id": "platform",
       "title": "Behind the Scenes",
       "blurb": "Databases, infrastructure, specs, and the invisible work that keeps it all running.",
-      "open": 0,
+      "open": 16,
       "closed": 109,
-      "total": 109,
-      "pct": 100,
+      "total": 125,
+      "pct": 82,
       "recentClosed": 0,
-      "status": "complete",
+      "status": "in_progress",
       "owners": [
         "Mike"
       ]
     }
   ],
   "totals": {
-    "open": 46,
+    "open": 80,
     "closed": 293,
     "recentClosed": 1
   }

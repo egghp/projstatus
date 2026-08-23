@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-14T17:59:26.185Z",
+  "generatedAt": "2026-08-23T16:22:20.440Z",
   "repo": "egghp/natallyrct",
   "hero": {
-    "open": 32,
+    "open": 37,
     "closed": 21,
-    "total": 53,
-    "pct": 26,
+    "total": 58,
+    "pct": 23,
     "recentClosed": 1
   },
   "roadmap": [
@@ -22,9 +22,9 @@
     {
       "title": "Health Tracking",
       "blurb": "Check-ins, symptoms & reminders",
-      "open": 13,
+      "open": 18,
       "closed": 1,
-      "total": 14,
+      "total": 19,
       "pct": 3,
       "recentClosed": 1,
       "status": "in_progress"
@@ -75,10 +75,10 @@
       "id": "tracking",
       "title": "Health Tracking & Check-ins",
       "blurb": "Daily and weekly health check-ins, symptom tracking, and appointment reminders.",
-      "open": 14,
+      "open": 19,
       "closed": 4,
-      "total": 18,
-      "pct": 18,
+      "total": 23,
+      "pct": 15,
       "recentClosed": 1,
       "status": "in_progress",
       "owners": [
@@ -256,7 +256,7 @@
     }
   ],
   "totals": {
-    "open": 40,
+    "open": 45,
     "closed": 293,
     "recentClosed": 1
   }

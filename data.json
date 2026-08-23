@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T16:23:46.661Z",
+  "generatedAt": "2026-08-23T16:33:29.663Z",
   "repo": "egghp/natallyrct",
   "hero": {
     "open": 37,
@@ -202,10 +202,10 @@
       "id": "compliance",
       "title": "Study Operations & Compliance",
       "blurb": "NYU security review, approvals, and the operational plumbing of the study.",
-      "open": 6,
+      "open": 7,
       "closed": 2,
-      "total": 8,
-      "pct": 31,
+      "total": 9,
+      "pct": 24,
       "recentClosed": 0,
       "status": "in_progress",
       "owners": [
@@ -256,7 +256,7 @@
     }
   ],
   "totals": {
-    "open": 45,
+    "open": 46,
     "closed": 293,
     "recentClosed": 1
   }

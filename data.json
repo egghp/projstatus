@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T16:34:47.083Z",
+  "generatedAt": "2026-08-23T16:41:32.809Z",
   "repo": "egghp/natallyrct",
   "hero": {
     "open": 37,
@@ -202,9 +202,9 @@
       "id": "compliance",
       "title": "Study Operations & Compliance",
       "blurb": "NYU security review, approvals, and the operational plumbing of the study.",
-      "open": 18,
+      "open": 17,
       "closed": 2,
-      "total": 20,
+      "total": 19,
       "pct": 10,
       "recentClosed": 0,
       "status": "in_progress",
@@ -244,10 +244,10 @@
       "id": "platform",
       "title": "Behind the Scenes",
       "blurb": "Databases, infrastructure, specs, and the invisible work that keeps it all running.",
-      "open": 16,
+      "open": 17,
       "closed": 109,
-      "total": 125,
-      "pct": 82,
+      "total": 126,
+      "pct": 81,
       "recentClosed": 0,
       "status": "in_progress",
       "owners": [

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-23T16:22:20.440Z",
+  "generatedAt": "2026-08-23T16:23:46.661Z",
   "repo": "egghp/natallyrct",
   "hero": {
     "open": 37,
     "closed": 21,
     "total": 58,
-    "pct": 23,
+    "pct": 24,
     "recentClosed": 1
   },
   "roadmap": [
@@ -78,7 +78,7 @@
       "open": 19,
       "closed": 4,
       "total": 23,
-      "pct": 15,
+      "pct": 16,
       "recentClosed": 1,
       "status": "in_progress",
       "owners": [

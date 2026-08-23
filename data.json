@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T16:41:32.809Z",
+  "generatedAt": "2026-08-23T16:47:26.329Z",
   "repo": "egghp/natallyrct",
   "hero": {
     "open": 37,
@@ -132,10 +132,10 @@
       "id": "chat",
       "title": "Natally Chat",
       "blurb": "The in-app companion participants can talk to any time.",
-      "open": 4,
+      "open": 7,
       "closed": 6,
-      "total": 10,
-      "pct": 47,
+      "total": 13,
+      "pct": 38,
       "recentClosed": 0,
       "status": "in_progress",
       "owners": [
@@ -256,7 +256,7 @@
     }
   ],
   "totals": {
-    "open": 80,
+    "open": 83,
     "closed": 293,
     "recentClosed": 1
   }

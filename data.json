@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T17:26:54.515Z",
+  "generatedAt": "2026-08-24T15:39:13.727Z",
   "repo": "egghp/natallyrct",
   "hero": {
     "open": 42,
@@ -82,8 +82,8 @@
       "recentClosed": 1,
       "status": "in_progress",
       "owners": [
-        "Will",
-        "Mike"
+        "Mike",
+        "Will"
       ]
     },
     {

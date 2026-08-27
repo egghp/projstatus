@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-24T15:41:33.758Z",
+  "generatedAt": "2026-08-27T22:18:32.564Z",
   "repo": "egghp/natallyrct",
   "hero": {
     "open": 42,
     "closed": 21,
     "total": 63,
     "pct": 22,
-    "recentClosed": 1
+    "recentClosed": 0
   },
   "roadmap": [
     {
@@ -26,7 +26,7 @@
       "closed": 1,
       "total": 19,
       "pct": 3,
-      "recentClosed": 1,
+      "recentClosed": 0,
       "status": "in_progress"
     },
     {
@@ -79,7 +79,7 @@
       "closed": 4,
       "total": 23,
       "pct": 16,
-      "recentClosed": 1,
+      "recentClosed": 0,
       "status": "in_progress",
       "owners": [
         "Will",
@@ -258,6 +258,6 @@
   "totals": {
     "open": 83,
     "closed": 293,
-    "recentClosed": 1
+    "recentClosed": 0
   }
 }
